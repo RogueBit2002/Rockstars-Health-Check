@@ -5,6 +5,7 @@ body {
     background-color: #232323;
     font-family: 'DIN 2014';
     font-weight: bold;
+    color:white;
 }
 
 body {
@@ -52,6 +53,7 @@ html {
     background-color: #ffe000;
     bottom: 0px;
     height:auto;
+    color:black;
 }
 
 #topBtn {
