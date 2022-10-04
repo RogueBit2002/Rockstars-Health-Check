@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Health Check - Data\Health Check - Data.csproj" />
     <ProjectReference Include="..\Health Check - Factory\Health Check - Factory.csproj" />
     <ProjectReference Include="..\Health Check - Logic\Health Check - Logic.csproj" />
   </ItemGroup>

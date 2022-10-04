@@ -17,6 +17,12 @@ namespace HealthCheck.Controllers
         {
             return View();
         }
+        public IActionResult DemoTime()
+        {
+            Data.DB DBConnection = new Data.DB();
+            ViewBag.Time = DBConnection.GetTime();
+            return View();
+        }
 
         public IActionResult Privacy()
         {
