@@ -14,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Health Check - Logic\Health Check - Logic.csproj" />
+    <ProjectReference Include="..\DTO's\HealthCheckDTO.csproj" />
+    <ProjectReference Include="..\InterFaces\HealthCheckInterfaces.csproj" />
   </ItemGroup>
 
 </Project>

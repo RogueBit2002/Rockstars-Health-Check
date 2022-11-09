@@ -9,11 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="src\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Health Check - Factory\Health Check - Factory.csproj" />
+    <ProjectReference Include="..\DTO's\HealthCheckDTO.csproj" />
+    <ProjectReference Include="..\InterFaces\HealthCheckInterfaces.csproj" />
   </ItemGroup>
 
 </Project>

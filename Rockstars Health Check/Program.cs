@@ -1,4 +1,4 @@
-HealthCheck.Factory.ServiceProvider.Init();
+
 
 var builder = WebApplication.CreateBuilder(args);
 

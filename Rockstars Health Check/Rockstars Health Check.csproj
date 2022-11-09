@@ -9,15 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Health Check - Data\Health Check - Data.csproj" />
-    <ProjectReference Include="..\Health Check - Factory\Health Check - Factory.csproj" />
-    <ProjectReference Include="..\Health Check - Logic\Health Check - Logic.csproj" />
 
 	  <PackageReference Include="MySqlConnector" Version="2.1.13" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\font\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Health Check - Data\HealthCheckDAL.csproj" />
+    <ProjectReference Include="..\Health Check - Logic\HealthCheckLogic.csproj" />
   </ItemGroup>
 
 </Project>

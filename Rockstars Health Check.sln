@@ -5,11 +5,13 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rockstars Health Check", "Rockstars Health Check\Rockstars Health Check.csproj", "{43668C18-171A-479B-9A14-2C8C55810599}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Health Check - Logic", "Health Check - Logic\Health Check - Logic.csproj", "{7FD57F3C-61CC-41FE-B8EB-E147BE17B8B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCheckLogic", "Health Check - Logic\HealthCheckLogic.csproj", "{7FD57F3C-61CC-41FE-B8EB-E147BE17B8B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Health Check - Data", "Health Check - Data\Health Check - Data.csproj", "{9EFBF9BA-8217-417D-B9A3-697EEF45EBBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCheckDAL", "Health Check - Data\HealthCheckDAL.csproj", "{9EFBF9BA-8217-417D-B9A3-697EEF45EBBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Health Check - Factory", "Health Check - Factory\Health Check - Factory.csproj", "{964F91E5-DC81-42D9-99E4-B2096086B635}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCheckInterfaces", "InterFaces\HealthCheckInterfaces.csproj", "{088ACAB7-2336-428D-8EA8-18439C375A32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCheckDTO", "DTO's\HealthCheckDTO.csproj", "{175E145F-4956-46D1-84E2-ECDBBBBC581A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +31,14 @@ Global
 		{9EFBF9BA-8217-417D-B9A3-697EEF45EBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EFBF9BA-8217-417D-B9A3-697EEF45EBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EFBF9BA-8217-417D-B9A3-697EEF45EBBF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{964F91E5-DC81-42D9-99E4-B2096086B635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{964F91E5-DC81-42D9-99E4-B2096086B635}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{964F91E5-DC81-42D9-99E4-B2096086B635}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{964F91E5-DC81-42D9-99E4-B2096086B635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{088ACAB7-2336-428D-8EA8-18439C375A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088ACAB7-2336-428D-8EA8-18439C375A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088ACAB7-2336-428D-8EA8-18439C375A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088ACAB7-2336-428D-8EA8-18439C375A32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175E145F-4956-46D1-84E2-ECDBBBBC581A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175E145F-4956-46D1-84E2-ECDBBBBC581A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175E145F-4956-46D1-84E2-ECDBBBBC581A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175E145F-4956-46D1-84E2-ECDBBBBC581A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,69 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HealthCheck.Models;
 using System.Diagnostics;
-using HealthCheck.Data;
 using MySqlConnector;
+using HealthCheck.DAL;
 
 namespace HealthCheck.Controllers
 {
     public class HomeController : AuthController
     {
+        HealthCheckje healthCheck = new HealthCheckje(new HealthCheckDAL());
+
         [Route("/home")]
         public IActionResult Index()
         {
-            /*if (!IsLoggedIn)
-                return RedirectToLoginPage();*/
-            
-            HomeModel model = new HomeModel();
-
-
-
-            model.time = DateTime.Now;// GetLastVisit();
-
-            //LogVisit();
-            return View(model);
+            return View();
         }
 
-        private DateTime GetLastVisit()
+        public void test()
         {
-            string query = "SELECT MAX(`time`) from `visit` WHERE `manager_id`=@id";
-
-            MySqlCommand command = new MySqlCommand(query, DatabaseConnectionProvider.Connection);
-            command.Parameters.AddWithValue("id", ManagerID);
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            if (!reader.Read())
-            {
-                reader.Close();
-                return DateTime.Now;
-            }
-                
-
-            int ordinal = reader.GetOrdinal("MAX(`time`)");
-
-            if (reader.IsDBNull(ordinal))
-            {
-                reader.Close();
-                return DateTime.Now;
-            }
-                
-
-            DateTime r = reader.GetDateTime(ordinal);
-            reader.Close();
-
-            return r;
-        }
-
-        private void LogVisit()
-        {
-            string query = "INSERT INTO `visit` (`manager_id`) VALUES (@id)";
-
-            MySqlCommand command = new MySqlCommand(query, DatabaseConnectionProvider.Connection);
-            command.Parameters.AddWithValue("id", ManagerID);
-
-            command.ExecuteNonQuery();
-
+            healthCheck.GetQuestion();
         }
     }
 }
