@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rockstars Health Check</title>
+    <link rel="stylesheet" href="~/css/root.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/rs-site.css" asp-append-version="true" />
+    <!--<link rel="stylesheet" href="~/Rockstars_Health_Check.styles.css" asp-append-version="true" />-->
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="">
+                <a class="" asp-area="" asp-controller="Home" asp-action="Index">Rockstars Health Check</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="">
+        <div class="">
+            &copy; 2022 - Rockstars Health Check
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!--<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿:root
+{
+    --color-background-dark: #232323;
+    --color-background-light: #ffffff;
+    --color-accent: #ffe000; 
+    --color-text-dark: #232323;
+    --color-text-light: #ffffff;
+}
+
+@font-face {
+    font-family: rockstars-default;
+    src: url('~/src/font/din_0.woff2');
+}

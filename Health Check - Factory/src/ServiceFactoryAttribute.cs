@@ -9,5 +9,6 @@ namespace HealthCheck.Factory
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
     public class ServiceFactoryAttribute : Attribute
     {
+
     }
 }

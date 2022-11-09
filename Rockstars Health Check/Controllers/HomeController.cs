@@ -1,38 +1,69 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HealthCheck.Models;
 using System.Diagnostics;
+using HealthCheck.Data;
+using MySqlConnector;
 
 namespace HealthCheck.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AuthController
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        [Route("/home")]
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult DemoTime()
-        {
-            Data.DB DBConnection = new Data.DB();
-            ViewBag.Time = DBConnection.GetTime();
-            return View();
+            /*if (!IsLoggedIn)
+                return RedirectToLoginPage();*/
+            
+            HomeModel model = new HomeModel();
+
+
+
+            model.time = DateTime.Now;// GetLastVisit();
+
+            //LogVisit();
+            return View(model);
         }
 
-        public IActionResult Privacy()
+        private DateTime GetLastVisit()
         {
-            return View();
+            string query = "SELECT MAX(`time`) from `visit` WHERE `manager_id`=@id";
+
+            MySqlCommand command = new MySqlCommand(query, DatabaseConnectionProvider.Connection);
+            command.Parameters.AddWithValue("id", ManagerID);
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            if (!reader.Read())
+            {
+                reader.Close();
+                return DateTime.Now;
+            }
+                
+
+            int ordinal = reader.GetOrdinal("MAX(`time`)");
+
+            if (reader.IsDBNull(ordinal))
+            {
+                reader.Close();
+                return DateTime.Now;
+            }
+                
+
+            DateTime r = reader.GetDateTime(ordinal);
+            reader.Close();
+
+            return r;
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        private void LogVisit()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            string query = "INSERT INTO `visit` (`manager_id`) VALUES (@id)";
+
+            MySqlCommand command = new MySqlCommand(query, DatabaseConnectionProvider.Connection);
+            command.Parameters.AddWithValue("id", ManagerID);
+
+            command.ExecuteNonQuery();
+
         }
     }
 }
